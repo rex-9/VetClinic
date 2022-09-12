@@ -13,3 +13,7 @@ BEGIN;
 ALTER TABLE pets
 RENAME COLUMN species TO unspecified;
 ROLLBACK;
+
+UPDATE pets
+SET species = 'Digimon'
+WHERE name LIKE '%mon';
