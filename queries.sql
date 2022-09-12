@@ -46,3 +46,10 @@ ROLLBACK TO sp1; -- Rollback to savepoint
 UPDATE pets
 SET weight_kg = weight_kg * -1 -- Make all weights positive;
 WHERE weight_kg < 0; -- screenshot is positive_weight.png
+
+SELECT COUNT(*) FROM pets; -- How many pets are there?
+SELECT COUNT(*) FROM pets WHERE escape_attempts = 0; -- How many pets have never tried to escape?
+SELECT AVG(weight_kg) FROM pets; -- What is the average weight of all pets?
+-- SELECT * FROM pets WHERE escape_attempts = ( SELECT MAX(escape_attempts) FROM pets ); -- Maximum number of escape attempts
+
+
