@@ -12,7 +12,7 @@ SELECT * from pets WHERE weight_kg between 10.4 and 17.3;
 BEGIN;
 ALTER TABLE pets
 RENAME COLUMN species TO unspecified; -- rename column from species to unspecified
-ROLLBACK;
+ROLLBACK; -- screenshot is species.png
 
 UPDATE pets
 SET species = 'Digimon'
@@ -26,7 +26,7 @@ COMMIT;
 
 BEGIN;
 DELETE FROM pets; -- Delete all rows from the pets table
-ROLLBACK;
+ROLLBACK; -- screenshot is delete.png
 
 UPDATE pets
 SET weight_kg = weight_kg * -1
@@ -41,3 +41,8 @@ SAVEPOINT sp1; -- Savepoint
 UPDATE pets
 SET weight_kg = weight_kg * -1; -- Make weights negative;
 
+ROLLBACK TO sp1; -- Rollback to savepoint
+
+UPDATE pets
+SET weight_kg = weight_kg * -1 -- Make all weights positive;
+WHERE weight_kg < 0; -- screenshot is positive_weight.png
