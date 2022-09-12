@@ -23,3 +23,7 @@ SET species = 'Pokemon'
 WHERE species ISNULL;
 
 COMMIT;
+
+BEGIN;
+DELETE FROM pets;
+ROLLBACK;
