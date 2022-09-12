@@ -11,23 +11,33 @@ SELECT * from pets WHERE weight_kg between 10.4 and 17.3;
 -- day 2
 BEGIN;
 ALTER TABLE pets
-RENAME COLUMN species TO unspecified;
+RENAME COLUMN species TO unspecified; -- rename column from species to unspecified
 ROLLBACK;
 
 UPDATE pets
 SET species = 'Digimon'
-WHERE name LIKE '%mon';
+WHERE name LIKE '%mon'; -- Set species of Digimon to the pets that have 'mon' in the end of their name
 
 UPDATE pets
 SET species = 'Pokemon'
-WHERE species ISNULL;
+WHERE species ISNULL; -- Set species of Pokemon to the pets WHERE species IS NULL;
 
 COMMIT;
 
 BEGIN;
-DELETE FROM pets;
+DELETE FROM pets; -- Delete all rows from the pets table
 ROLLBACK;
 
 UPDATE pets
 SET weight_kg = weight_kg * -1
-WHERE species = 'Pokemon';
+WHERE species = 'Pokemon'; -- Make weights negative;
+
+BEGIN;
+DELETE FROM pets
+WHERE birth_date > '2022-01-01'; -- Delete pets after 2022;
+
+SAVEPOINT sp1; -- Savepoint
+
+UPDATE pets
+SET weight_kg = weight_kg * -1; -- Make weights negative;
+
