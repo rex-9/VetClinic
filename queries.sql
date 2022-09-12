@@ -27,3 +27,7 @@ COMMIT;
 BEGIN;
 DELETE FROM pets;
 ROLLBACK;
+
+UPDATE pets
+SET weight_kg = weight_kg * -1
+WHERE species = 'Pokemon';
