@@ -1,3 +1,4 @@
+-- day1
 SELECT * from pets WHERE name LIKE '%mon';
 SELECT name from pets WHERE birth_date BETWEEN '2016-01-01' AND '2019-12-31';
 SELECT name from pets WHERE neutered IS true and escape_attempts < 3;
