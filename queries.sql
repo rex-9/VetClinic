@@ -50,6 +50,9 @@ WHERE weight_kg < 0; -- screenshot is positive_weight.png
 SELECT COUNT(*) FROM pets; -- How many pets are there?
 SELECT COUNT(*) FROM pets WHERE escape_attempts = 0; -- How many pets have never tried to escape?
 SELECT AVG(weight_kg) FROM pets; -- What is the average weight of all pets?
--- SELECT * FROM pets WHERE escape_attempts = ( SELECT MAX(escape_attempts) FROM pets ); -- Maximum number of escape attempts
+SELECT MAX(escape_attempts), neutered FROM pets GROUP BY neutered; -- Maximum number of escape attempts per neutered status
+SELECT Min(weight_kg), Max(weight_kg), COUNT(weight_kg), species FROM pets GROUP BY species; -- Min and Max weight of Pokemon and Digimon
+SELECT AVG(escape_attempts), species, birth_date FROM pets GROUP BY species, birth_date HAVING birth_date BETWEEN '1990-01-01' AND '2000-12-31'; -- What is the average number of escape attempts per pet type of those born between 1990 and 2000?
+
 
 
