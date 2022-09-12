@@ -45,7 +45,7 @@ ROLLBACK TO sp1; -- Rollback to savepoint
 
 UPDATE pets
 SET weight_kg = weight_kg * -1 -- Make all weights positive;
-WHERE weight_kg < 0; -- screenshot is positive_weight.png
+WHERE weight_kg < 0; -- screenshot is weights.png
 
 SELECT COUNT(*) FROM pets; -- How many pets are there?
 SELECT COUNT(*) FROM pets WHERE escape_attempts = 0; -- How many pets have never tried to escape?
