@@ -17,3 +17,9 @@ ROLLBACK;
 UPDATE pets
 SET species = 'Digimon'
 WHERE name LIKE '%mon';
+
+UPDATE pets
+SET species = 'Pokemon'
+WHERE species ISNULL;
+
+COMMIT;
