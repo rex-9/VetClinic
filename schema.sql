@@ -65,10 +65,8 @@ CREATE TABLE specializations (
 CREATE TABLE visits (
 	vet_id INT,
 	pet_id INT,
-	PRIMARY KEY (vet_id, pet_id),
+  visit_date date,
+	PRIMARY KEY (vet_id, pet_id, visit_date),
 	FOREIGN KEY (vet_id) REFERENCES vets (id),
 	FOREIGN KEY (pet_id) REFERENCES pets (id)
 ); -- Create visits join table
-
-ALTER TABLE visits
-ADD visit_date date; -- Add visit_date column to visits table

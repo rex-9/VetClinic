@@ -38,3 +38,29 @@ INSERT INTO vets VALUES (1, 'William Tatcher', 45, '2000-04-23'),
 (2, 'Maisy Smith', 26, '2019-01-17'),
 (3, 'Stephanie Mendez', 64, '1981-05-04'),
 (4, 'Jack Harkness', 38, '2008-06-08'); -- Insert new vets
+
+INSERT INTO specializations VALUES (1, 1), (3, 1), (3, 2), (4, 2); -- Insert new specializations
+
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2020-05-24' FROM vets JOIN pets ON pets.name = 'Agumon' AND vets.name = 'William Tatcher';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2020-07-22' FROM vets JOIN pets ON pets.name = 'Agumon' AND vets.name = 'Stephanie Mendez';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2021-02-02' FROM vets JOIN pets ON pets.name = 'Gabumon' AND vets.name = 'Jack Harkness';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2020-01-05' FROM vets JOIN pets ON pets.name = 'Pikachu' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2020-03-08' FROM vets JOIN pets ON pets.name = 'Pikachu' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2020-05-14' FROM vets JOIN pets ON pets.name = 'Pikachu' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2021-05-04' FROM vets JOIN pets ON pets.name = 'Devimon' AND vets.name = 'Stephanie Mendez';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2021-02-24' FROM vets JOIN pets ON pets.name = 'Charmander' AND vets.name = 'Jack Harkness';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2019-12-21' FROM vets JOIN pets ON pets.name = 'Plantmon' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2020-08-10' FROM vets JOIN pets ON pets.name = 'Plantmon' AND vets.name = 'William Tatcher';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2021-04-07' FROM vets JOIN pets ON pets.name = 'Plantmon' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2019-09-29' FROM vets JOIN pets ON pets.name = 'Squirtle' AND vets.name = 'Stephanie Mendez';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2020-10-03' FROM vets JOIN pets ON pets.name = 'Angemon' AND vets.name = 'Jack Harkness';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2020-11-04' FROM vets JOIN pets ON pets.name = 'Angemon' AND vets.name = 'Jack Harkness';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2019-01-24' FROM vets JOIN pets ON pets.name = 'Boarmon' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2019-05-15' FROM vets JOIN pets ON pets.name = 'Boarmon' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2020-02-27' FROM vets JOIN pets ON pets.name = 'Boarmon' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2020-08-03' FROM vets JOIN pets ON pets.name = 'Boarmon' AND vets.name = 'Maisy Smith';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2020-05-24' FROM vets JOIN pets ON pets.name = 'Blossom' AND vets.name = 'Stephanie Mendez';
+INSERT INTO visits (vet_id, pet_id, visit_date) SELECT vets.id, pets.id, '2021-01-11' FROM vets JOIN pets ON pets.name = 'Blossom' AND vets.name = 'William Tatcher';
+
+
+
