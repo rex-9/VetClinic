@@ -23,3 +23,6 @@ INSERT INTO owners VALUES (3, 'Bob', 45);
 INSERT INTO owners VALUES (4, 'Melody Pond', 77);
 INSERT INTO owners VALUES (5, 'Dean Winchester', 14);
 INSERT INTO owners VALUES (6, 'Jodie Whittaker', 38);
+
+UPDATE pets SET species_id = 2 WHERE name LIKE '%mon'; -- Update species_id column for Digimon
+UPDATE pets SET species_id = 1 WHERE species_id IS NULL; -- Update species_id column for Pokemon
