@@ -26,3 +26,9 @@ INSERT INTO owners VALUES (6, 'Jodie Whittaker', 38);
 
 UPDATE pets SET species_id = 2 WHERE name LIKE '%mon'; -- Update species_id column for Digimon
 UPDATE pets SET species_id = 1 WHERE species_id IS NULL; -- Update species_id column for Pokemon
+
+UPDATE pets SET owner_id = 1 WHERE name = 'Agumon'; -- Update owner_id column for Agumon
+UPDATE pets SET owner_id = 2 WHERE name IN ('Gabumon', 'Pikachu'); -- Update owner_id column for Gabumon and Pikachu
+UPDATE pets SET owner_id = 3 WHERE name IN ('Devimon', 'Plantmon'); -- Update owner_id column for Devimon and Plantmon
+UPDATE pets SET owner_id = 4 WHERE name IN ('Charmander', 'Squirtle', 'Blossom'); -- Update owner_id column for Charmander, Squirtle and Blossom
+UPDATE pets SET owner_id = 5 WHERE name IN ('Angemon', 'Boarmon'); -- Update owner_id column for Angemon and Boarmon
