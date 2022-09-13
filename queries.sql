@@ -16,12 +16,10 @@ ROLLBACK; -- screenshot is species.png
 SELECT * FROM pets;
 
 UPDATE pets
-SET species = 'Digimon'
-WHERE name LIKE '%mon'; -- Set species of Digimon to the pets that have 'mon' in the end of their name
+SET species = 'Digimon' WHERE name LIKE '%mon'; -- Set species of Digimon to the pets that have 'mon' in the end of their name
 
 UPDATE pets
-SET species = 'Pokemon'
-WHERE species ISNULL; -- Set species of Pokemon to the pets WHERE species IS NULL;
+SET species = 'Pokemon' WHERE species ISNULL; -- Set species of Pokemon to the pets WHERE species IS NULL;
 SELECT * FROM pets;
 
 COMMIT;
@@ -32,12 +30,10 @@ SELECT * FROM pets;
 ROLLBACK; -- screenshot is delete.png
 SELECT * FROM pets;
 UPDATE pets
-SET weight_kg = weight_kg * -1
-WHERE species = 'Pokemon'; -- Make weights negative;
+SET weight_kg = weight_kg * -1 WHERE species = 'Pokemon'; -- Make weights negative;
 
 BEGIN;
-DELETE FROM pets
-WHERE birth_date > '2022-01-01'; -- Delete pets after 2022;
+DELETE FROM pets WHERE birth_date > '2022-01-01'; -- Delete pets after 2022;
 
 SAVEPOINT sp1; -- Savepoint
 
@@ -58,4 +54,10 @@ SELECT Min(weight_kg), Max(weight_kg), COUNT(weight_kg), species FROM pets GROUP
 SELECT AVG(escape_attempts), species, birth_date FROM pets GROUP BY species, birth_date HAVING birth_date BETWEEN '1990-01-01' AND '2000-12-31'; -- What is the average number of escape attempts per pet type of those born between 1990 and 2000?
 -- screenshot for the above 6 operations is aggregates.png
 
-
+SELECT name, full_name FROM pets INNER JOIN owners ON pets.owner_id = owners.id WHERE owners.id = 4; -- Which pets belong to Melody Pond?
+SELECT pets.name, species.name FROM pets INNER JOIN species ON pets.species_id = species.id WHERE species.id = 1; -- List of all pets that are Pokemon.
+SELECT name, full_name FROM pets FULL JOIN owners ON pets.owner_id = owners.id; -- List of all owners and their pets, regardless of whether they own a pet or not.
+SELECT COUNT(*), species.name FROM pets, species WHERE pets.species_id = species.id GROUP BY species.name; -- How many pets are there for each species?
+SELECT name, full_name FROM pets JOIN owners ON pets.owner_id = owners.id WHERE full_name = 'Jennifer Orwell' and species_id = 2; -- List all Digimon owned by Jennifer Orwell.
+SELECT name, full_name FROM pets JOIN owners ON pets.owner_id = owners.id WHERE full_name = 'Dean Winchester' and escape_attempts = 0; -- List all pets owned by Dean Winchester that have never tried to escape.
+SELECT MAX(mycount) FROM (SELECT full_name, COUNT(*) mycount FROM pets JOIN owners ON pets.owner_id = owners.id GROUP BY full_name) myc; -- Max pets owned by an owner.
