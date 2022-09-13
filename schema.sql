@@ -36,4 +36,7 @@ ADD species_id INTEGER REFERENCES species (id) -- Add species_id column to pets 
 ALTER TABLE pets
 ADD owner_id INTEGER REFERENCES owners (id) -- Add owner_id column to pets table
 
-
+ALTER TABLE pets
+ADD CONSTRAINT fk_pets_owners
+FOREIGN KEY (owner_id)
+REFERENCES owners (id); -- Add owner_id foreign key constraint to pets table

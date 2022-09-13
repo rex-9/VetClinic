@@ -12,3 +12,11 @@ INSERT INTO pets (id, name, birth_date, escape_attempts, neutered, weight_kg) VA
 INSERT INTO pets (id, name, birth_date, escape_attempts, neutered, weight_kg) VALUES (9, 'Boarmon', DATE '2005-06-07', 7, true, 20.4);
 INSERT INTO pets (id, name, birth_date, escape_attempts, neutered, weight_kg) VALUES (10, 'Blossom', DATE '1998-10-13', 3, true, 17);
 INSERT INTO pets (id, name, birth_date, escape_attempts, neutered, weight_kg) VALUES (11, 'Ditto', DATE '2022-05-14', 4, true, 22);
+
+-- day 3
+INSERT INTO owners VALUES (1, 'Sam Smith', 34);
+INSERT INTO owners VALUES (2, 'Jennifer Orwell', 19);
+INSERT INTO owners VALUES (3, 'Bob', 45);
+INSERT INTO owners VALUES (4, 'Melody Pond', 77);
+INSERT INTO owners VALUES (5, 'Dean Winchester', 14);
+INSERT INTO owners VALUES (6, 'Jodie Whittaker', 38);
