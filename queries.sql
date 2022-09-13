@@ -60,4 +60,4 @@ SELECT name, full_name FROM pets FULL JOIN owners ON pets.owner_id = owners.id; 
 SELECT COUNT(*), species.name FROM pets, species WHERE pets.species_id = species.id GROUP BY species.name; -- How many pets are there for each species?
 SELECT name, full_name FROM pets JOIN owners ON pets.owner_id = owners.id WHERE full_name = 'Jennifer Orwell' and species_id = 2; -- List all Digimon owned by Jennifer Orwell.
 SELECT name, full_name FROM pets JOIN owners ON pets.owner_id = owners.id WHERE full_name = 'Dean Winchester' and escape_attempts = 0; -- List all pets owned by Dean Winchester that have never tried to escape.
-SELECT MAX(mycount) FROM (SELECT full_name, COUNT(*) mycount FROM pets JOIN owners ON pets.owner_id = owners.id GROUP BY full_name) myc; -- Max pets owned by an owner.
+SELECT owners.full_name , COUNT(pets.name) AS total_animals FROM owners JOIN pets ON pets.owner_id=owners.id GROUP BY owners.full_name ORDER BY total_animals DESC LIMIT 1; -- Max pets owned by an owner.
