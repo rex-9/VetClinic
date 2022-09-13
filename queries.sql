@@ -13,22 +13,17 @@ BEGIN;
 ALTER TABLE pets
 RENAME COLUMN species TO unspecified; -- rename column from species to unspecified
 ROLLBACK; -- screenshot is species.png
-SELECT * FROM pets;
 
 UPDATE pets
 SET species = 'Digimon' WHERE name LIKE '%mon'; -- Set species of Digimon to the pets that have 'mon' in the end of their name
 
 UPDATE pets
 SET species = 'Pokemon' WHERE species ISNULL; -- Set species of Pokemon to the pets WHERE species IS NULL;
-SELECT * FROM pets;
 
 COMMIT;
-SELECT * FROM pets;
 BEGIN;
 DELETE FROM pets; -- Delete all rows from the pets table
-SELECT * FROM pets;
 ROLLBACK; -- screenshot is delete.png
-SELECT * FROM pets;
 UPDATE pets
 SET weight_kg = weight_kg * -1 WHERE species = 'Pokemon'; -- Make weights negative;
 
