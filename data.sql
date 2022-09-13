@@ -14,6 +14,9 @@ INSERT INTO pets (id, name, birth_date, escape_attempts, neutered, weight_kg) VA
 INSERT INTO pets (id, name, birth_date, escape_attempts, neutered, weight_kg) VALUES (11, 'Ditto', DATE '2022-05-14', 4, true, 22);
 
 -- day 3
+INSERT INTO species VALUES (1, 'Pokemon');
+INSERT INTO species VALUES (2, 'Digimon');
+
 INSERT INTO owners VALUES (1, 'Sam Smith', 34);
 INSERT INTO owners VALUES (2, 'Jennifer Orwell', 19);
 INSERT INTO owners VALUES (3, 'Bob', 45);
