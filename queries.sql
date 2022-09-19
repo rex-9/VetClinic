@@ -87,14 +87,12 @@ WHERE vets.name = 'Maisy Smith' GROUP BY species LIMIT 1; -- What specialty shou
 
 -- Indexing
 explain analyze SELECT COUNT(*) FROM visits where pet_id = 4; -- Explain analyze query for visits where pet_id = 4
-
 CREATE INDEX visits_asc ON visits(pet_id ASC); -- before index -> 1067ms, after index -> 408ms
 
 explain analyze SELECT * FROM visits where vet_id = 2; -- Explain analyze query for visits where vet_id = 2
-
-
+CREATE INDEX visits_vet_asc ON visits(vet_id ASC); -- before index -> 2745ms, after index -> 2654ms
 
 explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com'; -- Explain analyze query for owners where email = 'owner_18327@mail.com'
-
+CREATE INDEX owners_email_asc ON owners(email ASC); -- before index -> 0.675ms, after index -> 0.098ms
 
 
