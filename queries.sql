@@ -83,3 +83,18 @@ JOIN visits ON vets.id = visits.vet_id
 JOIN pets ON visits.pet_id = pets.id
 JOIN species ON species.id = pets.species_id
 WHERE vets.name = 'Maisy Smith' GROUP BY species LIMIT 1; -- What specialty should Maisy Smith consider getting?
+
+
+-- Indexing
+explain analyze SELECT COUNT(*) FROM visits where pet_id = 4; -- Explain analyze query for visits where pet_id = 4
+
+CREATE INDEX visits_asc ON visits(pet_id ASC); -- before index -> 1067ms, after index -> 408ms
+
+explain analyze SELECT * FROM visits where vet_id = 2; -- Explain analyze query for visits where vet_id = 2
+
+
+
+explain analyze SELECT * FROM owners where email = 'owner_18327@mail.com'; -- Explain analyze query for owners where email = 'owner_18327@mail.com'
+
+
+
